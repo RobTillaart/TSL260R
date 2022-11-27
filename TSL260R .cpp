@@ -26,6 +26,13 @@ TSL260R::TSL260R(uint8_t pin, uint16_t maxADC, float voltage)
 TSL260R::TSL260R()
 {
   TSL260R(0, 1, 0); //  prevent divide by zero
+  //  datasheet page 9
+  //  voltage parameters
+  _aa = 10.0067;
+  _bb = -0.02013423; 
+  //  wavelength parameters
+  _waveLength       = 940; 
+  _waveLengthFactor = 1.0;
 }
 
 

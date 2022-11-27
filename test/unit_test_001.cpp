@@ -48,7 +48,7 @@ unittest_teardown()
 }
 
 
-unittest(test_constructor)
+unittest(test_constructor_I)
 {
   TSL260R TSL0;
   TSL261R TSL1;
@@ -61,6 +61,15 @@ unittest(test_constructor)
   assertEqualFloat(1.0, TSL0.getWaveLengthFactor(), 0.001);
   assertEqualFloat(1.0, TSL1.getWaveLengthFactor(), 0.001);
   assertEqualFloat(1.0, TSL2.getWaveLengthFactor(), 0.001);
+}
+
+
+unittest(test_constructor_II)
+{
+  TSL260R TSL0(14, 1023, 5.0);
+
+  assertEqual(940, TSL0.getWavelength() );
+  assertEqualFloat(1.0, TSL0.getWaveLengthFactor(), 0.001);
 }
 
 
