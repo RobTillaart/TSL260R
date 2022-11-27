@@ -48,11 +48,34 @@ unittest_teardown()
 }
 
 
-unittest(test_constructor)
+unittest(test_constructor_I)
 {
-  TSL260R TSL;
-  assertEqual(940, TSL.getWavelength() );
-  assertEqualFloat(1.0, TSL.getWaveLengthFactor(), 0.001);
+  TSL260R TSL0;
+  TSL261R TSL1;
+  TSL262R TSL2;
+
+  assertEqual(940, TSL0.getWaveLength() );
+  assertEqual(940, TSL1.getWaveLength() );
+  assertEqual(940, TSL2.getWaveLength() );
+
+  assertEqualFloat(1.0, TSL0.getWaveLengthFactor(), 0.001);
+  assertEqualFloat(1.0, TSL1.getWaveLengthFactor(), 0.001);
+  assertEqualFloat(1.0, TSL2.getWaveLengthFactor(), 0.001);
+}
+
+
+unittest(test_constructor_II)
+{
+  TSL260R TSL0(14, 1023, 5.0);
+  TSL261R TSL1(14, 1023, 5.0);
+  TSL262R TSL2(14, 1023, 5.0);
+
+  assertEqual(940, TSL0.getWaveLength() );
+  assertEqual(940, TSL1.getWaveLength() );
+  assertEqual(940, TSL2.getWaveLength() );
+  assertEqualFloat(1.0, TSL0.getWaveLengthFactor(), 0.001);
+  assertEqualFloat(1.0, TSL1.getWaveLengthFactor(), 0.001);
+  assertEqualFloat(1.0, TSL1.getWaveLengthFactor(), 0.001);
 }
 
 
@@ -74,6 +97,7 @@ unittest(test_calculateWaveLengthFactor)
   TSL260R TSL;
 
   //  check the internal table 
+  assertEqualFloat(100,   TSL.calculateWaveLengthFactor(700), 0.1);
   assertEqualFloat(100,   TSL.calculateWaveLengthFactor(800), 0.1);
   assertEqualFloat(10,    TSL.calculateWaveLengthFactor(830), 0.01);
   assertEqualFloat(1.25,  TSL.calculateWaveLengthFactor(880), 0.001);
@@ -83,6 +107,19 @@ unittest(test_calculateWaveLengthFactor)
   assertEqualFloat(3.333, TSL.calculateWaveLengthFactor(1050), 0.001);
   assertEqualFloat(10,    TSL.calculateWaveLengthFactor(1100), 0.01);
   assertEqualFloat(100,   TSL.calculateWaveLengthFactor(1150), 0.1);
+  assertEqualFloat(100,   TSL.calculateWaveLengthFactor(1200), 0.1);
+}
+
+
+unittest(test_get_setWaveLength)
+{
+  TSL260R TSL;
+
+  for (uint16_t wavelen = 800; wavelen < 1200; wavelen += 50)
+  {
+    TSL.setWaveLength(wavelen);
+    assertEqual(wavelen, TSL.getWaveLength());
+  }
 }
 
 
