@@ -25,7 +25,7 @@ TSL260R::TSL260R(uint8_t pin, uint16_t maxADC, float voltage)
 
 TSL260R::TSL260R()
 {
-  TSL260R(0, 1, 0);
+  TSL260R(0, 1, 0); //  prevent divide by zero
 }
 
 
@@ -34,6 +34,13 @@ float TSL260R::irradiance(float voltage)
   float value = _aa * voltage + _bb;
   if (_waveLengthFactor != 1.0) value *= _waveLengthFactor;
   return value;
+}
+
+
+float TSL260R::irradiance()
+{
+  float voltage = analogRead(_pin) * _voltagePerStep;
+  return irradiance(voltage);
 }
 
 
@@ -99,6 +106,9 @@ TSL261R::TSL261R() : TSL260R()
   //  voltage parameters
   _aa = 23.34564;
   _bb = -0.03692;
+  //  wavelength parameters
+  _waveLength       = 940; 
+  _waveLengthFactor = 1.0;
 }
 
 
@@ -116,7 +126,10 @@ TSL262R::TSL262R() : TSL260R()
   //  datasheet page 9
   //  voltage parameters
   _aa = 110;
-  _bb = 0; 
+  _bb = 0;
+  //  wavelength parameters
+  _waveLength       = 940; 
+  _waveLengthFactor = 1.0;
 }
 
 

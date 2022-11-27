@@ -21,6 +21,11 @@ public:
   //  for external ADC
   TSL260R();
 
+  //  use internal ADC, defined in constructor
+  //  uses a single analogRead() => defined by constructor.
+  float    irradiance();
+  //  use external (or internal) ADC voltage.
+  //  e.g to average multiple analogRead() calls
   float    irradiance(float voltage);
 
   //  range: 800 - 1150 ==> 940 = default.
