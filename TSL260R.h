@@ -34,10 +34,10 @@ public:
 protected:
   uint16_t _waveLength;
   float    _waveLengthFactor;
-  //       _A and _B are defined in constructor;
+  //       _aa and _bb are defined in constructor;
   //       need getter / setter to adjust values runtime
-  float    _A;
-  float    _B;
+  float    _aa;
+  float    _bb;
   float    multiMap(float value, float * _in, float * _out, uint8_t size);
 };
 
