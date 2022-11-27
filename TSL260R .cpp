@@ -46,6 +46,7 @@ float TSL260R::irradiance(float voltage)
 
 float TSL260R::irradiance()
 {
+  if (_voltagePerStep <= 0) return 0;
   float voltage = analogRead(_pin) * _voltagePerStep;
   return irradiance(voltage);
 }
