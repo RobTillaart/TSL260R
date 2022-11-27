@@ -4,9 +4,11 @@
 // PURPOSE: verify figure 12 datasheet page 9 voltage vs irradiance.
 //    DATE: 2022-11-27
 //
-// PIN 1 - GND
-// PIN 2 - VDD - 5V
-// PIN 3 - SIGNAL
+//  always check datasheet
+//
+//  PIN 1 - GND
+//  PIN 2 - VDD - 5V
+//  PIN 3 - SIGNAL
 
 
 #include "TSL260R.h"

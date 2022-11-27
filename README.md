@@ -54,16 +54,16 @@ Always check datasheet
 - **TSL262R()** constructor for TSL262R
 - **float irradiance(float voltage)** returns the irradiance in uW/cm2.
 
-#### Wavelength
+#### WaveLength
 
-- **void setWavelength(uint16_t wavelength = 940)** sets the wavelength so the conversion can use a correction factor. 
-At 900 - 940 nm the wavelength correction factor == 1.0.
-Wavelength should be between 830 and 1100.
-- **uint16_t getWavelength()** returns the set wavelength.
-- **float getWaveLengthFactor()** returns the wavelength correction factor. 
+- **void setWaveLength(uint16_t waveLength = 940)** sets the wave length so the conversion can use a correction factor. 
+At 900 - 940 nm the wave length correction factor == 1.0.
+Wave length should be between 830 and 1100.
+- **uint16_t getWaveLength()** returns the set wave length.
+- **float getWaveLengthFactor()** returns the wave length correction factor. 
 Note the sensor is most sensitive around 940 nm. See datasheet.
 - **calculateWaveLengthFactor(uint16_t waveLength)** calculates the factor to compensate for less sensitivity. 
-E.g. if the sensor is 0.5 x as sensitive at a given wavelength the factor should be 2. 
+E.g. if the sensor is 0.5 x as sensitive at a given wave length the factor should be 2. 
 
 
 #### Calibration

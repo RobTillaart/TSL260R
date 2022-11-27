@@ -17,7 +17,7 @@ TSL260R::TSL260R(uint8_t pin, uint16_t maxADC, float voltage)
   //  voltage parameters
   _aa = 10.0067;
   _bb = -0.02013423; 
-  //  wavelength parameters
+  //  waveLength parameters
   _waveLength       = 940; 
   _waveLengthFactor = 1.0;
 }
@@ -30,7 +30,7 @@ TSL260R::TSL260R()
   //  voltage parameters
   _aa = 10.0067;
   _bb = -0.02013423; 
-  //  wavelength parameters
+  //  waveLength parameters
   _waveLength       = 940; 
   _waveLengthFactor = 1.0;
 }
@@ -51,14 +51,14 @@ float TSL260R::irradiance()
 }
 
 
-void TSL260R::setWavelength(uint16_t wavelength)
+void TSL260R::setWaveLength(uint16_t waveLength)
 {
-  _waveLength = wavelength;
+  _waveLength = waveLength;
   _waveLengthFactor = calculateWaveLengthFactor(_waveLength);
 }
 
 
-uint16_t TSL260R::getWavelength()
+uint16_t TSL260R::getWaveLength()
 {
   return _waveLength; 
 }
@@ -113,7 +113,7 @@ TSL261R::TSL261R() : TSL260R()
   //  voltage parameters
   _aa = 23.34564;
   _bb = -0.03692;
-  //  wavelength parameters
+  //  waveLength parameters
   _waveLength       = 940; 
   _waveLengthFactor = 1.0;
 }
@@ -121,6 +121,13 @@ TSL261R::TSL261R() : TSL260R()
 
 TSL261R::TSL261R(uint8_t pin, uint16_t maxADC, float voltage) : TSL260R(pin, maxADC, voltage)
 {
+  //  datasheet page 9
+  //  voltage parameters
+  _aa = 23.34564;
+  _bb = -0.03692;
+  //  waveLength parameters
+  _waveLength       = 940; 
+  _waveLengthFactor = 1.0;
 }
 
 
@@ -134,7 +141,7 @@ TSL262R::TSL262R() : TSL260R()
   //  voltage parameters
   _aa = 110;
   _bb = 0;
-  //  wavelength parameters
+  //  waveLength parameters
   _waveLength       = 940; 
   _waveLengthFactor = 1.0;
 }
@@ -143,6 +150,13 @@ TSL262R::TSL262R() : TSL260R()
 
 TSL262R::TSL262R(uint8_t pin, uint16_t maxADC, float voltage) : TSL260R(pin, maxADC, voltage)
 {
+  //  datasheet page 9
+  //  voltage parameters
+  _aa = 110;
+  _bb = 0;
+  //  waveLength parameters
+  _waveLength       = 940; 
+  _waveLengthFactor = 1.0;
 }
 
 

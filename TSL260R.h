@@ -7,7 +7,7 @@
 // PURPOSE: library for the TSL260R IR to voltage convertor
 
 
-#define TSL260R_LIB_VERSION             (F("0.1.0"))
+#define TSL260R_LIB_VERSION             (F("0.1.1"))
 
 #include "Arduino.h"
 
@@ -29,8 +29,8 @@ public:
   float    irradiance(float voltage);
 
   //  range: 800 - 1150 ==> 940 = default.
-  void     setWavelength(uint16_t wavelength = 940);
-  uint16_t getWavelength();
+  void     setWaveLength(uint16_t waveLength = 940);
+  uint16_t getWaveLength();
   float    getWaveLengthFactor();
 
   //  useful for debugging too

@@ -4,6 +4,8 @@
 // PURPOSE: demo
 //    DATE: 2022-11-27
 //
+//  always check datasheet
+//
 //  PIN 1 - GND
 //  PIN 2 - VDD - 5V
 //  PIN 3 - SIGNAL
