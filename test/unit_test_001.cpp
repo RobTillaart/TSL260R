@@ -50,9 +50,17 @@ unittest_teardown()
 
 unittest(test_constructor)
 {
-  TSL260R TSL;
-  assertEqual(940, TSL.getWavelength() );
-  assertEqualFloat(1.0, TSL.getWaveLengthFactor(), 0.001);
+  TSL260R TSL0;
+  TSL261R TSL1;
+  TSL262R TSL2;
+
+  assertEqual(940, TSL0.getWavelength() );
+  assertEqual(940, TSL1.getWavelength() );
+  assertEqual(940, TSL2.getWavelength() );
+
+  assertEqualFloat(1.0, TSL0.getWaveLengthFactor(), 0.001);
+  assertEqualFloat(1.0, TSL1.getWaveLengthFactor(), 0.001);
+  assertEqualFloat(1.0, TSL2.getWaveLengthFactor(), 0.001);
 }
 
 

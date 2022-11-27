@@ -25,12 +25,20 @@ It is written on the datasheet, and I have no hardware yet to test it.
 Of course I am very interested in your experiences and feedback to improve
 the library.
 
+|  Type     |  max uW/cm2  |
+|:---------:|:------------:|
+|  TSL260R  |   30
+|  TSL261R  |
+|  TSL262R  |
+
 
 ## Hardware Connection
 
-Always check datasheet
+Always check datasheet 
 
 ```
+//  Front view 
+//
 //  PIN 1 - GND
 //  PIN 2 - VDD      2.7 V .. 5.5 V
 //  PIN 3 - SIGNAL   voltage out
@@ -41,7 +49,9 @@ Always check datasheet
 
 #### Base
 
-- **TSL260R()** constructor
+- **TSL260R()** constructor for TSL260R
+- **TSL261R()** constructor for TSL261R
+- **TSL262R()** constructor for TSL262R
 - **float irradiance(float voltage)** returns the irradiance in uW/cm2.
 
 #### Wavelength
@@ -74,6 +84,7 @@ See examples.
 - test test test test
 - extend interface
   - include an analogRead constructor + vars
+- calibration
   - getters/setters for A and B to calibrate the sensor.
 
 #### should
@@ -84,3 +95,8 @@ See examples.
 
 #### could
 - test with different IR LEDS (e.g. remote)
+- Normalized Output Voltage vs Angular Displacement correction
+  - figure 11
+- temperature correction
+- 
+

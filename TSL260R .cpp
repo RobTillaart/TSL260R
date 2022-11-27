@@ -1,7 +1,7 @@
 //
 //    FILE: TSL260R.cpp
 //  AUTHOR: Rob Tillaart
-// VERSION: 0.1.0
+// VERSION: 0.1.1
 //    DATE: 2022-11-25
 // PURPOSE: library for the TSL260R IR to voltage convertor
 
@@ -9,8 +9,10 @@
 #include "TSL260R.h"
 
 
-TSL260R::TSL260R()
+TSL260R::TSL260R(uint8_t pin, uint16_t maxADC, float voltage)
 {
+  _pin = pin;
+  _voltagePerStep = voltage / maxADC;
   //  datasheet page 9 figure 12
   //  voltage parameters
   _aa = 10.0067;
@@ -18,6 +20,12 @@ TSL260R::TSL260R()
   //  wavelength parameters
   _waveLength       = 940; 
   _waveLengthFactor = 1.0;
+}
+
+
+TSL260R::TSL260R()
+{
+  TSL260R(0, 1, 0);
 }
 
 
@@ -90,10 +98,12 @@ TSL261R::TSL261R() : TSL260R()
   //  datasheet page 9
   //  voltage parameters
   _aa = 23.34564;
-  _bb = -0.03692; 
-  //  wavelength parameters
-  _waveLength       = 940; 
-  _waveLengthFactor = 1.0;
+  _bb = -0.03692;
+}
+
+
+TSL261R::TSL261R(uint8_t pin, uint16_t maxADC, float voltage) : TSL260R(pin, maxADC, voltage)
+{
 }
 
 
@@ -107,10 +117,14 @@ TSL262R::TSL262R() : TSL260R()
   //  voltage parameters
   _aa = 110;
   _bb = 0; 
-  //  wavelength parameters
-  _waveLength       = 940; 
-  _waveLengthFactor = 1.0;
 }
+
+
+
+TSL262R::TSL262R(uint8_t pin, uint16_t maxADC, float voltage) : TSL260R(pin, maxADC, voltage)
+{
+}
+
 
 
 //  -- END OF FILE --

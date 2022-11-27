@@ -1,10 +1,8 @@
-//  see email 2022-01-25
-
 #pragma once
 //
 //    FILE: TSL260R.h
 //  AUTHOR: Rob Tillaart
-// VERSION: 0.1.0
+// VERSION: 0.1.1
 //    DATE: 2022-11-25
 // PURPOSE: library for the TSL260R IR to voltage convertor
 
@@ -18,6 +16,9 @@ class TSL260R
 {
 public:
 
+  //  for internal ADC
+  TSL260R(uint8_t pin, uint16_t maxADC, float voltage);
+  //  for external ADC
   TSL260R();
 
   float    irradiance(float voltage);
@@ -32,6 +33,8 @@ public:
 
 
 protected:
+  uint8_t  _pin;
+  float    _voltagePerStep;
   uint16_t _waveLength;
   float    _waveLengthFactor;
   //       _aa and _bb are defined in constructor;
@@ -50,6 +53,7 @@ class TSL261R : public TSL260R
 {
 public:
   TSL261R();
+  TSL261R(uint8_t pin, uint16_t maxADC, float voltage);
 };
 
 
@@ -57,6 +61,7 @@ class TSL262R : public TSL260R
 {
 public:
   TSL262R();
+  TSL262R(uint8_t pin, uint16_t maxADC, float voltage);
 };
 
 
