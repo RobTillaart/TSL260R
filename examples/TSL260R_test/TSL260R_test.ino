@@ -1,7 +1,7 @@
 //
 //    FILE: TSL260R_test.ino
 //  AUTHOR: Rob Tillaart
-// PURPOSE: verify figure 12 datasheet page 9 voltage vs irradiance.
+// PURPOSE: test wavelength
 //    DATE: 2022-11-27
 //
 //  always check datasheet
