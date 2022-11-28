@@ -111,10 +111,10 @@ See datasheet figure 12: Output Voltage vs Irradiance
 
 Use with care.
 
-- **void     setAA(float aa)** set a new value for AA.
-- **float    getAA()** return the current value.
-- **void     setBB(float bb)** set a new value for BB.
-- **float    getBB()** return the current value.
+- **void setAA(float aa)** set a new value for AA.
+- **float getAA()** return the current value.
+- **void setBB(float bb)** set a new value for BB.
+- **float getBB()** return the current value.
 
 
 ## Operations

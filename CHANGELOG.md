@@ -8,7 +8,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [0.1.2] - 2022-11-27
 - add getter / setter for \_aa and \_bb
+- add unit tests for get/set above
 - update comments
+- update readme.md
 - update examples
 - fix space in .cpp name
 
