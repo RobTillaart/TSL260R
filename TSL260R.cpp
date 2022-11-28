@@ -24,7 +24,7 @@ TSL260R::TSL260R()
 {
   TSL260R(0, 1, 0); //  prevent divide by zero
   //  datasheet page 9
-  //  voltage parameters
+  //  irradiance parameters
   _aa = 10.0067;
   _bb = -0.02013423;
   //  waveLength parameters
@@ -87,7 +87,7 @@ float TSL260R::calculateWaveLengthFactor(uint16_t waveLength)
 void TSL260R::setAA(float aa) { _aa = aa; }
 float TSL260R::getAA()        { return _aa; }
 
-void TSL260R::setBB(float aa) { _bb = bb; }
+void TSL260R::setBB(float bb) { _bb = bb; }
 float TSL260R::getBB()        { return _bb; }
 
 
