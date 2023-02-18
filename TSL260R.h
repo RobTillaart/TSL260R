@@ -52,10 +52,11 @@ protected:
   float    _waveLengthFactor = 1;
   //       _aa and _bb are defined in constructor;
   //       need getter / setter to adjust values runtime
-  float    _aa;
-  float    _bb;
+  float    _aa = 10.0067;
+  float    _bb = -0.02013423;
   float    multiMap(float value, float * _in, float * _out, uint8_t size);
 };
+
 
 
 ///////////////////////////////////////////////////////
