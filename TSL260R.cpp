@@ -1,9 +1,10 @@
 //
 //    FILE: TSL260R.cpp
 //  AUTHOR: Rob Tillaart
-// VERSION: 0.1.2
+// VERSION: 0.1.3
 //    DATE: 2022-11-25
 // PURPOSE: library for the TSL260R IR to voltage convertor
+//     URL: https://github.com/RobTillaart/TSL260R
 
 
 #include "TSL260R.h"
