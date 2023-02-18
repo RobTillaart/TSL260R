@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [0.1.3] - 2023-02-18
 
+- refactor constructor
 - update readme.md
 - update GitHub actions
 - update license 2023
